@@ -24,7 +24,7 @@ function FormUnits(props) {
 
   const getUnitById = async (porteroId, levelId, currentId) => {
     const doc = await db
-      .collection("porteros")
+      .collection("portero")
       .doc(porteroId)
       .collection("levels")
       .doc(levelId)
@@ -64,7 +64,7 @@ function FormUnits(props) {
     try {
       if (props.currentId === "") {
         await db
-          .collection("porteros")
+          .collection("portero")
           .doc(props.porteroId)
           .collection("levels")
           .doc(props.levelId)
@@ -77,7 +77,7 @@ function FormUnits(props) {
         });
       } else {
         await db
-          .collection("porteros")
+          .collection("portero")
           .doc(props.porteroId)
           .collection("levels")
           .doc(props.levelId)

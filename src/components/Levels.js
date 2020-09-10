@@ -18,7 +18,7 @@ function Levels(props) {
   }, [porteroId]);
 
   const getLevels = (porteroId) => {
-    db.collection("porteros")
+    db.collection("portero")
       .doc(porteroId)
       .collection("levels")
       .onSnapshot((querySnapshot) => {
@@ -29,7 +29,7 @@ function Levels(props) {
         setLevels(docs);
       });
 
-    db.collection("porteros")
+    db.collection("portero")
       .doc(porteroId)
       .get()
       .then((doc) => setPortero(doc.data()));
@@ -38,7 +38,7 @@ function Levels(props) {
   const onDeleteLink = async (porteroId, currentId) => {
     if (window.confirm("Estás seguro de querer eliminar este level?")) {
       await db
-        .collection("porteros")
+        .collection("portero")
         .doc(porteroId)
         .collection("levels")
         .doc(currentId)
@@ -54,7 +54,7 @@ function Levels(props) {
     try {
       if (currentId === "") {
         await db
-          .collection("porteros")
+          .collection("portero")
           .doc(porteroId)
           .collection("levels")
           .doc()
@@ -65,7 +65,7 @@ function Levels(props) {
         });
       } else {
         await db
-          .collection("porteros")
+          .collection("portero")
           .doc(porteroId)
           .collection("levels")
           .doc(currentId)

@@ -20,7 +20,7 @@ function Units(props) {
   }, [levelId]);
 
   const getUnits = (levelId) => {
-    db.collection("porteros")
+    db.collection("portero")
       .doc(porteroId)
       .collection("levels")
       .doc(levelId)
@@ -33,12 +33,12 @@ function Units(props) {
         setUnits(docs);
       });
 
-    db.collection("porteros")
+    db.collection("portero")
       .doc(porteroId)
       .get()
       .then((doc) => setPortero(doc.data()));
 
-    db.collection("porteros")
+    db.collection("portero")
       .doc(porteroId)
       .collection("levels")
       .doc(levelId)
@@ -49,7 +49,7 @@ function Units(props) {
   const onDeleteLink = async (porteroId, levelId, currentId) => {
     if (window.confirm("Estás seguro de querer eliminar esta unidad?")) {
       await db
-        .collection("porteros")
+        .collection("portero")
         .doc(porteroId)
         .collection("levels")
         .doc(levelId)
@@ -67,7 +67,7 @@ function Units(props) {
     try {
       if (currentId === "") {
         await db
-          .collection("porteros")
+          .collection("portero")
           .doc(porteroId)
           .collection("levels")
           .doc(levelId)
@@ -80,7 +80,7 @@ function Units(props) {
         });
       } else {
         await db
-          .collection("porteros")
+          .collection("portero")
           .doc(porteroId)
           .collection("levels")
           .doc(levelId)

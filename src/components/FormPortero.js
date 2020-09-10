@@ -17,7 +17,7 @@ function FormPortero(props) {
   }, [props.currentId]);
 
   const getPorteroById = async (id) => {
-    const doc = await db.collection("porteros").doc(id).get();
+    const doc = await db.collection("portero").doc(id).get();
     setValues({ ...doc.data() });
   };
 

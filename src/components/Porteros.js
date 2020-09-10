@@ -15,7 +15,7 @@ function Porteros() {
     }, []);
 
     const getPorteros = () => {
-        db.collection("porteros").onSnapshot((querySnapshot) => {
+        db.collection("portero").onSnapshot((querySnapshot) => {
             const docs = [];
             querySnapshot.forEach((doc) => {
                 docs.push({...doc.data(), id: doc.id});
@@ -26,7 +26,7 @@ function Porteros() {
 
     const onDeleteLink = async (id) => {
         if (window.confirm("Estás seguro de querer eliminar este portero?")) {
-            await db.collection("porteros").doc(id).delete();
+            await db.collection("portero").doc(id).delete();
             toast("Portero eliminado", {
                 type: "error",
                 autoClose: 2000,
@@ -37,13 +37,13 @@ function Porteros() {
     const addOrEdit = async (porteroObject) => {
         try {
             if (currentId === "") {
-                await db.collection("porteros").doc().set(porteroObject);
+                await db.collection("portero").doc().set(porteroObject);
                 toast("Portero agregado correctamente", {
                     type: "success",
                     autoClose: 2000,
                 });
             } else {
-                await db.collection("porteros").doc(currentId).update(porteroObject);
+                await db.collection("portero").doc(currentId).update(porteroObject);
                 toast("Portero actualizado correctamente", {
                     type: "info",
                     autoClose: 2000,

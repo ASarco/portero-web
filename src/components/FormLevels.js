@@ -22,7 +22,7 @@ function FormPortero(props) {
 
   const getLevelById = async (porteroId, currentId) => {
     const doc = await db
-      .collection("porteros")
+      .collection("portero")
       .doc(porteroId)
       .collection("levels")
       .doc(currentId)
@@ -50,7 +50,7 @@ function FormPortero(props) {
     try {
       if (props.currentId === "") {
         await db
-          .collection("porteros")
+          .collection("portero")
           .doc(props.porteroId)
           .collection("levels")
           .doc()
@@ -61,7 +61,7 @@ function FormPortero(props) {
         });
       } else {
         await db
-          .collection("porteros")
+          .collection("portero")
           .doc(props.porteroId)
           .collection("levels")
           .doc(props.currentId)
