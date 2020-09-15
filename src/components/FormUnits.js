@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 function FormUnits(props) {
   const initialStateValues = {
     name: "",
-    phone: "",
+    phoneNumber: "",
     porteroId: "",
     levelId: "",
   };
@@ -118,10 +118,10 @@ function FormUnits(props) {
           <input
             type="text"
             className="form-control"
-            name="phone"
+            name="phoneNumber"
             placeholder="Telefono unidad"
             onChange={handleInputChangePhone}
-            value={values.phone}
+            value={values.phoneNumber}
           />
         </div>
 

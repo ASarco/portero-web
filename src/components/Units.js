@@ -112,7 +112,7 @@ function Units(props) {
           />
           <div className="input-group-append">
             <span className="input-group-text lighten-3" id="basic-text1">
-              <i className="fas fa-search text-grey" aria-hidden="true"></i>
+              <i className="fas fa-search text-grey" aria-hidden="true"/>
             </span>
           </div>
         </div>
@@ -146,7 +146,7 @@ function Units(props) {
                   <div className="d-flex justify-content-between">
                     <div>
                       <h4>{unit.name}</h4>
-                      <h5>Teléfono: {unit.phone}</h5>
+                      <h5>Teléfono: {unit.phoneNumber}</h5>
                     </div>
                     <div className="d-flex justify-content-center align-items-center">
                       <i
@@ -154,11 +154,11 @@ function Units(props) {
                         onClick={() =>
                           onDeleteLink(porteroId, levelId, unit.id)
                         }
-                      ></i>
+                      />
                       <i
                         className="far fa-edit"
                         onClick={() => setCurrentId(unit.id)}
-                      ></i>
+                      />
                     </div>
                   </div>
                   <Link to={`/portero/level/${unit.id}`}> Ver detalles</Link>
