@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 import { db } from "../firebase";
+import Header from "./Header";
 
 function Levels(props) {
   const [levels, setLevels] = useState([]);
@@ -84,6 +85,7 @@ function Levels(props) {
   return (
     <div className="container">
       <div className="row-fluid">
+        <Header/>
         <div className="input-group md-form form-sm form-2 pl-0">
           <input
             className="form-control my-0 py-1 amber-border"
